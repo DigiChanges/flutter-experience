@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_experience/main.dart';
+import 'package:flutter_experience/src/shared/presentation/i18n/i18n_wrapper.dart';
 
+import '../../../../my_app.dart';
 import '../../../core/router/app_routes.dart';
-import '../../../my_app.dart';
 
 class BlocsProviders extends StatelessWidget {
   const BlocsProviders({super.key});
@@ -14,7 +14,7 @@ class BlocsProviders extends StatelessWidget {
         providers:  [
           BlocProvider(create: (context) => RouterSimpleCubit()),
         ],
-        child: const MyApp()
+        child: I18NWrapper.createLocalizationWrapper(const MyApp())
     );
   }
 
